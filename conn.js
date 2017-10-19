@@ -11,7 +11,6 @@ mongoose.Promise = global.Promise;
 const accountSchema = new mongoose.Schema({
 	name: 'string',	
 	email: 'string',
-	age: 'string',
 	username: 'string',
 	password: 'string'
 });
@@ -58,7 +57,7 @@ app.post('/login',(req,res)=> {
 			return res.redirect('/tryagain');
 		}
 		  
-		return res.redirect('/login');
+		return res.redirect('/users_page');
 	});
 });
 
@@ -70,10 +69,8 @@ app.post('/accounts', (req, res) => {
 	const newAccount = {
 		"name": req.body.name,
 		"email": req.body.email,
-		"age": req.body.age,
 		"username": req.body.username,
 		"password": req.body.password
-	
 	};
 	const callback = (err, data)=>{
 		if(err)throw err;
@@ -94,6 +91,7 @@ app.post('/accounts', (req, res) => {
 		else if(req.body.password != req.body.confirm){
 			res.redirect('/registerError');
 		}
+
 		else{
 			Accounts.findOne({username: req.body.username,email: req.body.email},(err,user)=>{
 				if(err){
