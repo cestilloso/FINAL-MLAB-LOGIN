@@ -37,61 +37,77 @@ body {
       <form class="login-form" action="/accounts" method="post">
         <div class="row">
           <div class="input-field col s12 center">
-         <br><br>
+            <br><br>
             <p class="center login-form-text">SignUp Form</p>
           </div>
         </div>
-        <div class="row margin">
-          <div class="input-field col s12">
-            <i class="mdi-social-person-outline prefix"></i>
-            <input id="name" name="name" type="text" class="validate">
-            <label for="name" class="center-align">Name</label>
-          </div>
-        </div>
-        <div class="row margin">
-          <div class="input-field col s12">
-            <i class="mdi-social-person-outline prefix"></i>
-            <input id="username" name="username" type="text" class="validate">
-            <label for="username" class="center-align">Username</label>
-          </div>
-        </div>
-        <div class="row margin">
-          <div class="input-field col s12">
-            <i class="mdi-communication-email prefix"></i>
-            <input id="email" name="email" type="email" class="validate">
-            <label for="email" class="center-align">Email</label>
-          </div>
-        </div>
-        <div class="row margin">
-          <div class="input-field col s12">
-            <i class="mdi-communication-email prefix"></i>
-            <input id="age" name="age" type="text" class="validate">
-            <label for="age" class="center-align">Age</label>
-          </div>
-        </div>
-        <div class="row margin">
-          <div class="input-field col s12">
-            <i class="mdi-action-lock-outline prefix"></i>
-            <input id="password" name="password" type="password" class="validate">
-            <label for="password">Password</label>
-          </div>
-        </div>
-        <div class="row margin">
-          <div class="input-field col s12">
-            <i class="mdi-action-lock-outline prefix"></i>
-            <input id="password-again" type="password">
-            <label for="password-again">Re-type password</label>
-          </div>
-        </div>
+         <div class="form-group">
+        <i class="mdi-social-person-outline prefix"></i>
+                <label for="name" class="cols-sm-2 control-label">Your Name</label>
+                <div class="cols-sm-10">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                    <input type="text" class="form-control" name="name" id="name"  placeholder="Enter your Name"/>
+                  </div>
+                </div>
+              </div>
+
+     <div class="form-group">
+              <i class="mdi-social-person-outline prefix"></i>
+                <label for="name" class="cols-sm-2 control-label">Your Username</label>
+                <div class="cols-sm-10">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                    <input type="text" class="form-control" name="username" id="username"  placeholder="Enter your Username"/>
+                  </div>
+                </div>
+              </div>
+
+               <div class="form-group">
+    <i class="mdi-communication-email prefix"></i>
+                <label for="name" class="cols-sm-2 control-label">Your Email</label>
+                <div class="cols-sm-10">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                    <input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>
+                  </div>
+                </div>
+              </div>
+
+               <div class="form-group">
+     <i class="mdi-communication-email prefix"></i>
+                <label for="name" class="cols-sm-2 control-label">Your Age</label>
+                <div class="cols-sm-10">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                    <input type="text" class="form-control" name="age" id="age"  placeholder="Enter your Age"/>
+                  </div>
+                </div>
+              </div>
+
+
+        <div class="form-group">
+                <label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
+                <div class="cols-sm-10">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                    <input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password"/>
+                  </div>
+                </div>
+              </div>
+              <form action="/users">
         <div class="row">
           <div class="input-field col s12">
             <input type="submit" value="Register">
           </div>
+          </form>
+
           <div class="input-field col s12">
             <p class="margin center medium-small sign-up">Already have an account? <a href="/">Login</a></p>
+              <script type="text/javascript" src="js/add_account.js"></script>  
+          <p style="color:red"><center> Already Exist</center></p>  
+      
           </div>
-          
-      <p style="color:red"><center> Username or Email Address already exist </center
         </div>
       </form>
     </div>

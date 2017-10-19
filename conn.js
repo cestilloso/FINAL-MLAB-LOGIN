@@ -52,6 +52,10 @@ app.post('/login',(req,res)=> {
 			return res.redirect('/fieldLogin');
 		}
 
+		if(!user){
+			console.log("Invalid Username or Password");
+			return res.redirect('/tryagain');
+		}
 		  
 		return res.redirect('/users_page');
 	});
@@ -84,6 +88,9 @@ app.post('/accounts', (req, res) => {
 			res.redirect('/emailRegister');
 		}
 
+		else if(req.body.password != req.body.confirm){
+			res.redirect('/registerError');
+		}
 
 		else{
 			Accounts.findOne({username: req.body.username,email: req.body.email},(err,user)=>{
@@ -106,6 +113,10 @@ app.post('/accounts', (req, res) => {
 
 app.get('/register',(req,res)=>	{
 	res.render('register.ejs');
+});
+
+app.get('/registerError',(req,res)=>{
+	res.render('error_register.ejs');
 });
 
 app.get('/registerExists',(req,res)=>{
